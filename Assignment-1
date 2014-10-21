@@ -1,0 +1,27 @@
+/*Assigment1.c*/
+/*Darren Carthy*/
+/*DT222/2*/
+/*Completed 3/10/14*/
+
+#include <stdio.h>
+
+ int number1;
+ int number2;
+ int result1;
+ int result2;
+
+int main (void) 
+{
+ 
+ printf("Please select the integer you would like to square");
+ scanf("%d", &number1);
+ printf("Please select the integer you would like to cube");
+ scanf("%d", &number2);
+ result1 = number1*number1;
+ result2 = number2*number2*number2;
+ printf("Square = %d\n", result1);
+ printf("Cube = %d\n", result2);
+ system('pause');
+ return 0;
+	
+}
