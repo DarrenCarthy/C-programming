@@ -1,0 +1,56 @@
+/*ASSIGNMENT 2*/
+/*DT222/2*/
+/*DARREN CARTHY*/
+
+#include<stdio.h>
+#include<math.h>
+
+int Math (int myFunction);
+ int a;
+	int b;
+	
+ int main ()
+ {
+	int myFunction;
+	int myResult1;
+	
+	printf("******************************************************************************\n");
+	printf("******************************************************************************\n");
+
+	printf("              Welcome to Darren's Calculator                        \n");
+	
+	printf("******************************************************************************\n");
+	printf("******************************************************************************\n");
+
+
+	printf("would you like to add or multiply?\n To add type 0\n To Multiply type 1\n");
+	scanf("%d", &myFunction);
+ myResult1 = Math (myFunction);
+ printf("the answer is %d\n", myResult1);
+	system("pause");
+	
+	}
+
+int Math (int myFunction)
+
+{
+	 int myResult1;
+	 
+	 if (myFunction == 0)
+  {
+			printf("Please select first integer you would like to Add\n");
+			scanf("%d", &a);
+			printf("Please select second integer you would like to Add\n");
+			scanf("%d", &b);
+			myResult1 = (a + b);
+	 }
+	 
+   else if (myFunction == 1)
+		{
+					printf("Please select first integer you would like to Multiply\n");
+					scanf("%d", &a);
+					printf("Please select second integer you would like to Multiply\n");
+					scanf("%d", &b);
+					myResult1 = (a*b);
+  }
+}/*math*/
