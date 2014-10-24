@@ -1,0 +1,42 @@
+/*Assignment2: Factorial_calculator.c*/
+/*DT222/2*/
+/*Daren Carthy*/
+
+#include<stdio.h>
+#include<math.h>
+
+long fac(int n);
+ 
+int main()
+{
+  int n;
+  
+  printf("Type the integer you would like to find factorial of\n");
+  scanf("%d", &n); 
+ 
+  if (n <= 0)
+		{
+  
+    printf("Negative factorials cannot be calculated.\n"); /*to prevent an error if an integer is less than or equal to 0 */
+  }
+  else
+  {
+    long result = fac(n);
+    printf("%d! = %ld\n", n, result);
+  }
+  return 0;
+}/*main*/
+ 
+long fac(int n)
+{
+ if (n == 0)
+	{ /*to prevent an error if 0 is entered as n*/
+		
+  	return 1;
+ }
+ else
+  {
+    return(n * fac(n-1));
+  }
+  
+}/*fac*/
