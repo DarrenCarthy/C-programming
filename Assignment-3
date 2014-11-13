@@ -1,0 +1,60 @@
+/*weather.c*/
+/*DARREN CARTHY*/
+/*13/11/2014*/
+
+#include<stdio.h>
+#define SIZE 7
+
+
+void calc(int[],int*,int*,int*);
+
+main()
+{
+    int i;
+    int temp[SIZE] = {21,19,20,21,27,19,18};
+    int high;
+    int low;
+    int avg;
+    calc(temp,&high,&low,&avg);
+    
+  
+    printf("The Weather for the week is:\n");
+    for(i=0; i<SIZE; i++)
+    {
+        printf("%d: %d\n",i+1, temp[i]);
+    }
+    printf("The Highest Temperature of the week is: %d\n",high);
+    printf("The Lowest Temperature of the week is: %d\n",low);
+    printf("The Average Temperature of the week is: %d",avg);
+    return 0;
+}/*main*/
+
+void calc(int temp[], int *high, int *low, int *avg) 
+{
+		int i;
+		int sum_plus=0;
+		
+		for(i=0; i<SIZE; i++)
+		{
+				if(*high < *(temp+i))
+				{
+					*high = *(temp+i);
+				}
+	 }/*for highest*/
+	
+			for(i=0; i<SIZE; i++)	
+			{
+				if(*low > *(temp+i))
+				{
+						*low = *(temp+i);
+				}
+			}/*for lowest*/
+		
+		for(i=0; i<SIZE; i++ )
+		{
+				sum_plus += *(temp+i);
+		}/*for average*/
+		
+	*avg = sum_plus/SIZE;
+
+}/*calc*/
