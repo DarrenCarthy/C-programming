@@ -1,0 +1,107 @@
+/*DARREN CARTHY*/
+/*DT222/2*/
+/*QUADRATIC FUNCTIONS*/
+/*quadratics_ex1_sm2.c*/
+
+#include<stdio.h>
+#include<math.h>
+
+//declaration of boolean data type 
+typedef enum { true, false } bool;
+
+
+double math_1(double*, double*, double*, double*);		/*The prototype of the first root function passing three values as a 'double' data type*/ 
+double math_2(double*, double*, double*, double*);  /*The prototype of the second root function passing three values as a 'double' data type*/
+
+main() {
+	double root_1=0;
+	double root_2=0;
+	double a,b,c;
+	
+	
+	printf("Enter a value for a\n");															
+	scanf("%lf", &a);
+	printf("Enter a value for b\n");																	/*Requests for the three values  */
+	scanf("%lf", &b);
+	printf("Enter a value for c\n");
+	scanf("%lf", &c);
+	
+	
+root_1 = math_1(&a, &b, &c, &root_1);	/* Calling first root function  */
+
+printf("the first root of the equation is %f\n", root_1);			/* Displays the first root of the equation */
+		
+root_2 = math_2(&a, &b, &c, &root_2);	/* Calling second root function  */
+
+printf("the second root of the equation is %f\n", root_2);			/* Displays the second root of the equation */
+}
+
+double math_1(double *a, double *b, double *c, double *root_1)
+ {
+ 	// declared boolean to check if x is a neg number 
+ 	bool neg = false;
+ 	
+ 	//debugging code
+ 	printf("a=%lf b=%lf c=%lf" ,*a,*b,*c);
+ 	
+ 	//x and y 
+ 	double x, y;
+ 	x = ((pow(*b,2))-(4*((*a)*(*c))));		//X is b^2 - 4*a*c
+ 	
+ 	//if x is a neg number 
+ 	if(x<0)
+ 	{
+ 		neg = true;
+ 		x *= -1;	//change to positive for computation arithmetic
+ 	}
+	 y=pow(x,0.5);		//square root of x
+	 printf("x = %f\n", x);			//debugging
+	 printf("y = %f\n", y);			//debugging
+  *root_1 = (-(*b)+(y/(2*(*a))));		//root 1 equation division
+  
+  //if it was a neg number, make it negative again after equation
+  if(neg == true)
+  {
+  		*root_1 *= -1;
+  }
+  
+  //
+  printf("Root_1 = %f", *root_1); //debugging
+  return *root_1;
+  
+}
+
+double math_2(double *a, double *b, double *c, double *root_2)
+ {
+ 	// declared boolean to check if x is a neg number 
+ 	bool neg = false;
+ 	
+ 	//debugging code
+ 	printf("a=%lf b=%lf c=%lf" ,*a,*b,*c);
+ 	
+ 	//x and y 
+ 	double x, y;
+ 	x = ((pow(*b,2))-(4*((*a)*(*c))));		//X is b^2 - 4*a*c
+ 	
+ 	//if x is a neg number 
+ 	if(x<0)
+ 	{
+ 		neg = true;
+ 		x *= -1;	//change to positive for computation arithmetic
+ 	}
+	 y=pow(x,0.5);		//square root of x
+	 printf("x = %f\n", x);			//debugging
+	 printf("y = %f\n", y);			//debugging
+  *root_2 = (-(*b)-(y/(2*(*a))));		//root 2 equation division
+  
+  //if it was a neg number, make it negative again after equation
+  if(neg == true)
+  {
+  		*root_2 *= -1;
+  }
+  
+  //
+  printf("Root_2 = %f", *root_2); //debugging
+  return *root_2;
+  
+}
